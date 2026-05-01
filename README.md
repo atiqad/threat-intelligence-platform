@@ -8,21 +8,21 @@ The system follows event-driven architecture with Kafka.
 
 ## Microservices
 1. Ingestion Service (Port 8080)
-   - Fetches threat data
-   - Extracts IPs and domains
-   - Sends data to Kafka
+    - Fetches threat data
+    - Extracts IPs and domains
+    - Sends data to Kafka
 
 2. Processing Service (Port 8081)
-   - Consumes Kafka data
-   - Validates IOC data
-   - Calls Ranking Service
-   - Stores data in MySQL
+    - Consumes Kafka data
+    - Validates IOC data
+    - Calls Ranking Service
+    - Stores data in MySQL
 
 3. Analytics Service (Port 8082)
-   - Provides APIs to fetch stored IOC data
+    - Provides APIs to fetch stored IOC data
 
 4. Ranking Service (Port 8083)
-   - Calculates severity score for IPs
+    - Calculates severity score for IPs
 
 ## Technologies Used
 - Spring Boot
@@ -41,10 +41,10 @@ The system follows event-driven architecture with Kafka.
 ## How to Run
 1. Start Kafka using Docker
 2. Run all services:
-   - ingestion-service
-   - processing-service
-   - analytics-service
-   - ranking-service
+    - ingestion-service
+    - processing-service
+    - analytics-service
+    - ranking-service
 
 ## API Endpoints
 - http://localhost:8080/ingestion/send
