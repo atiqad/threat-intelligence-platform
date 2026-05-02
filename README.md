@@ -80,6 +80,16 @@ threat-intelligence-platform/
 ├── docker-compose.yml
 └── README.md
 
+## Documentation
+
+Full CCP report is available here:
+documentation/CCP-Report.pdf
+
+## System Design Diagrams
+
+Architecture, Sequence, and Activity diagrams are included in:
+documentation-diagrams/
+
 How to Run the Project
 Clone the repository
 Open the project in IntelliJ IDEA
