@@ -1,55 +1,96 @@
-# Threat Intelligence Processing Platform
+# Threat Intelligence Processing Platform using Microservices and Kafka
 
-## Overview
-This project is a microservices-based system that processes threat intelligence data using Kafka and REST APIs.
+## Course Information
+Course: COMP-370 Software Construction and Development  
+Project Type: Course Completion Project (CCP)
 
-## Architecture
-The system follows event-driven architecture with Kafka.
+---
 
-## Microservices
-1. Ingestion Service (Port 8080)
-    - Fetches threat data
-    - Extracts IPs and domains
-    - Sends data to Kafka
+## Project Overview
+This project is a microservices-based cybersecurity platform designed to process Indicators of Compromise (IOCs) such as IP addresses and domain names. The system uses Apache Kafka for asynchronous communication between services and REST APIs for synchronous communication.
 
-2. Processing Service (Port 8081)
-    - Consumes Kafka data
-    - Validates IOC data
-    - Calls Ranking Service
-    - Stores data in MySQL
+The platform simulates a real-world threat intelligence pipeline where data is ingested, processed, ranked, and stored for further analysis.
 
-3. Analytics Service (Port 8082)
-    - Provides APIs to fetch stored IOC data
+---
 
-4. Ranking Service (Port 8083)
-    - Calculates severity score for IPs
+## Objectives
+- Design and implement a microservices architecture
+- Use Apache Kafka for event-driven communication
+- Apply REST APIs for service interaction
+- Implement persistent storage using MySQL
+- Demonstrate modular and scalable system design
+
+---
+
+## System Architecture
+The system is divided into multiple independent microservices:
+
+- Ingestion Service
+- Processing Service
+- Ranking Service
+- Analytics Service
+
+Each service is responsible for a specific task and communicates with others through Kafka and REST APIs.
+
+---
+
+## Key Features
+- Microservices-based architecture
+- Kafka Producer and Consumer implementation
+- Real-time data processing pipeline
+- REST API communication between services
+- MySQL database integration
+- Scalable and loosely coupled design
+
+---
 
 ## Technologies Used
+- Java
 - Spring Boot
 - Apache Kafka
 - MySQL
-- Docker
 - REST APIs
+- Docker (optional)
+- Git and GitHub
 
-## Workflow
-1. Ingestion Service sends data to Kafka
-2. Processing Service consumes data
-3. Processing Service calls Ranking Service
-4. Data stored in MySQL
-5. Analytics Service provides results
+---
 
-## How to Run
-1. Start Kafka using Docker
-2. Run all services:
-    - ingestion-service
-    - processing-service
-    - analytics-service
-    - ranking-service
+## System Design Diagrams
+The following system design diagrams are included:
 
-## API Endpoints
-- http://localhost:8080/ingestion/send
-- http://localhost:8082/analytics/iocs
-- http://localhost:8083/ranking/score/{ip}
+- Architecture Diagram
+- Sequence Diagram
+- Activity Diagram
 
-## Author
-Atiqad Hayat
+These diagrams are available in the following folder:
+
+documentation-diagrams/
+
+---
+
+## Project Structure
+```text
+threat-intelligence-platform/
+├── ingestion-service
+├── processing-service
+├── ranking-service
+├── analytics-service
+├── documentation
+├── documentation-diagrams
+├── docker-compose.yml
+└── README.md
+
+How to Run the Project
+Clone the repository
+Open the project in IntelliJ IDEA
+Configure MySQL database
+Start Apache Kafka and Zookeeper
+Run all microservices
+Access APIs using Postman
+Team Collaboration
+
+This project was developed using GitHub for version control and collaboration. Work was divided among team members, including backend service implementation, documentation, and system design diagrams. Changes were managed through commits and pull requests.
+
+Contributors
+Atiqad Hayat — Microservices implementation, Kafka integration, backend development
+Bilal Samii — Documentation, system design diagrams (architecture, sequence, activity)
